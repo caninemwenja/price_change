@@ -39,15 +39,18 @@ You can check how it's done [here](prices/models.py).
 Installing
 ----------
 
-1. Clone the repo: 
+**Clone the repo:**
 ```
 $ git clone https://github.com/caninemwenja/price_change.git
 ```
-2. Create the database:
+
+**Create the database:**
 ```
 $ cd price_change
 $ ./manage.py syncdb # you can ignore the superuser stuff
-3. Run the dev server
+```
+
+**Run the dev server**
 ```
 $ ./manage runserver
 ```
