@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}All Prices{% endblock %}
+
+{% block body %}
+<h1>Prices</h1>
+<hr>
+
+<a href="{% url 'add_price' %}">Add Price</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Added On</th>
+            <th>Change</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for price in prices %}
+        <tr>
+            <td>{{ price.pk }}</td>
+            <td>{{ price.item }}</td>
+            <td>{{ price.price }}</td>
+            <td>{{ price.time_added }}</td>
+            <td>{{ price.price_change }}</td>
+            <td>
+                <a href="{% url 'remove_price' price.pk %}">Remove</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Price{% endblock %}
+
+{% block body %}
+<h1>Add Price</h1>
+<hr>
+<form action="{% url 'add_price' %}" method="POST">
+    {% csrf_token %}
+    {{ price_form.as_p }}
+    <button type="submit">Add</button>
+</form>
+
+<br>
+
+<a href="{% url 'all_prices' %}">All Prices</a>
+{% endblock %}
